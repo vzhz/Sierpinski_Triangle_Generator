@@ -1,5 +1,4 @@
-import pygame
-import random
+import pygame, random, time
 
 width = 1000
 height = 1000
