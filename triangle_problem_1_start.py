@@ -35,7 +35,22 @@ def draw_pixel_recursive(x1, y1, count): #add count if you want to flip only occ
     time.sleep(0.5)
     draw_pixel_recursive(P_1[0],P_1[1], count-1)
 
-### alternative
+### alternative settings for slower version of visualization ###
+# P_0 = (random_row(), random_col())
+# varibles = [random_point() for i in range(4)]
+# i = random.randint(0,2)
+
+# count = 0
+# while count <= 100000:
+#   i = (i + random.randint(0,3))%4 #placeholder change 3 if you don't want to repeat a letter
+#   chosen_one = varibles[i]
+#   P_1 = (midpoint(P_0[0], P_0[1], chosen_one[0], chosen_one[1]))
+#   draw_pixel(P_0[0], P_0[1], chosen_one[0], chosen_one[1], P_1[0], P_1[1]) #why is this throwing an error?
+#   P_0 = P_1
+#   i = (i + random.randint(0,3))%4 #placeholder change 3 if you don't want to repeat a letter
+#   chosen_one = varibles[i]
+#   draw_pixel_ABCD_1(P_0[0], P_0[1], chosen_one[0], chosen_one[1])
+#   count += 1
 
 def random_row():
     return random.randint(0, height)
