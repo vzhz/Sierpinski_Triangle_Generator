@@ -5,7 +5,8 @@ A little visual in Python and PyGame to help me understand recursion using [Sier
 
 ## The Question
 I started with a triangle from three randomly chosen points and then created a pyramid from four randomly chosen points.
-![A screenshot of the triangle]() ![A screenshot of the pyramid]() <-- can I get these inline?
+![A screenshot of the triangle]() 
+![A screenshot of the pyramid](https://github.com/vzhz/exploring_sierpinski_pyramids/blob/master/example_pyramid.png)
 
 After creating this, I realized that I didn't really understand how the triangles were being constructed.  Since understanding recursion was the primary reason to build this, I wanted to slow down the construction of the triangle (just like we all do for online talks we don't understand), so I made a mode that slows the speed of construction and colored the points that are being used to give the new midpoint and the next point in the image.  
 ![A screenshot of the slower view of the triangle]()
