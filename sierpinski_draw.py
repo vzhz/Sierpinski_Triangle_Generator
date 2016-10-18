@@ -1,4 +1,5 @@
 import pygame, random, time
+from sys import version_info
 
 ### window parameters for initial triangle visualization ###
 width = 1000
@@ -14,6 +15,13 @@ ABCD_color = pygame.Color(50, 50, 255)
 pygame.init()
 surface = pygame.display.set_mode((width, height))
 
+def ask_desired_display():
+    py3 = version_info[0] > 2
+    if py3:
+        script_version = input("Would you like the full-speed ("f") or the simplified version ("s")?")
+    else:
+        response = raw_input("Would you like the full-speed ("f") or the simplified version ("s")?")
+
 def draw_pixel(x, y, count):
     """Draws each pixel in the initial case"""
     surface.fill(color, ((x, y), (1, 1)))
@@ -21,7 +29,7 @@ def draw_pixel(x, y, count):
         pygame.display.flip()
 
 def draw_pixel_recursive(x1, y1, count): #add count if you want to flip only occasionally
-    """Draws each pixel in the """
+    """Draws each pixel in the slower case"""
     if count==0:
         return
     chosen_one = ABCD[random.randint(0,3)]
@@ -53,7 +61,7 @@ def draw_pixel_recursive(x1, y1, count): #add count if you want to flip only occ
 #   count += 1
 
 ### call this if user asks for slower version ###
-# draw_pixel_recursive(P_0[0], P_0[1], 10000)
+draw_pixel_recursive(P_0[0], P_0[1], 10000)
 
 def random_row():
     return random.randint(0, height)
@@ -73,17 +81,18 @@ P = (random_row(), random_col())
 varibles = [random_point() for i in range(4)]
 i = random.randint(0,2)
 
-count = 0
-while count <= 100000:
-    i = (i + random.randint(0,3))%4
-    chosen_one = varibles[i]
-    a_row = chosen_one[0]
-    a_col = chosen_one[1]
-    b_row = P[0]
-    b_col = P[1]
-    draw_pixel(b_row, b_col, count)
-    P = (midpoint(a_row, b_row, a_col, b_col))
-    count += 1
+def draw_either(chosen_one, P, draw_pixel)
+    count = 0
+    while count <= 100000:
+        i = (i + random.randint(0,3))%4
+        chosen_one = varibles[i]
+        a_row = chosen_one[0]
+        a_col = chosen_one[1]
+        b_row = P[0]
+        b_col = P[1]
+        draw_pixel(b_row, b_col, count)
+        P = (midpoint(a_row, b_row, a_col, b_col))
+        count += 1
 
 
 pygame.event.wait()
