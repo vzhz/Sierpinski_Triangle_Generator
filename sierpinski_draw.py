@@ -15,15 +15,9 @@ ABCD_color = pygame.Color(50, 50, 255)
 pygame.init()
 surface = pygame.display.set_mode((width, height))
 
-def ask_desired_display():
-    py3 = version_info[0] > 2
-    if py3:
-        script_version = input("Would you like the full-speed ("f") or the simplified version ("s")?")
-    else:
-        response = raw_input("Would you like the full-speed ("f") or the simplified version ("s")?")
 
 def draw_pixel(x, y, count):
-    """Draws each pixel in the initial case"""
+    """Draws each pixel in the full-speed case"""
     surface.fill(color, ((x, y), (1, 1)))
     if count%100==0:
         pygame.display.flip()
@@ -61,7 +55,7 @@ def draw_pixel_recursive(x1, y1, count): #add count if you want to flip only occ
 #   count += 1
 
 ### call this if user asks for slower version ###
-draw_pixel_recursive(P_0[0], P_0[1], 10000)
+#draw_pixel_recursive(P_0[0], P_0[1], 10000)
 
 def random_row():
     return random.randint(0, height)
