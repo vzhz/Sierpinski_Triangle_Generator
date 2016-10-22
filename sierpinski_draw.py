@@ -7,11 +7,13 @@ from sys import version_info
 #def ask_desired_display():
 py3 = version_info[0] > 2
 if py3:
-    script_version = input("""Would you like the full-speed triangle (ft), full-speed pyramid (fp),
-                              or the simplified version (s)?""")
+    script_version = input("""Would you like the full-speed triangle (ft),
+                                                 full-speed pyramid (fp), or the
+                                                 simplified version (s)?""")
 else:
-    script_version = raw_input("""Would you like the full-speed triangle (ft), full-speed pyramid (fp),
-                                  or the simplified version (s)?""")
+    script_version = raw_input("""Would you like the full-speed triangle (ft),
+                                                     full-speed pyramid (fp), or the
+                                                     simplified version (s)?""")
 
 def run(script_version):
     if script_version == "ft":
