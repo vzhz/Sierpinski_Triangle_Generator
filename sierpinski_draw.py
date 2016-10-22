@@ -146,21 +146,6 @@ def draw_pyramids_slow():
             time.sleep(0.5)
             draw_pixel_recursive(P_1[0],P_1[1], count-1)
 
-        # def draw_pixel_recursive(x1, y1, count): #add count if you want to flip only occasionally
-    #     """Draws each pixel in the slower case"""
-    #     if count==0:
-    #         return
-    #     chosen_one = ABCD[random.randint(0,3)]
-    #     P_1 = midpoint(x1, y1, chosen_one[0], chosen_one[1])
-    #     surface.fill(previous_P_0, ((x1, y1), (5, 5)))
-    #     pygame.draw.line(surface, (255, 50, 50), (x1, y1), (chosen_one[0], chosen_one[1]), 1)
-    #     pygame.display.flip()
-    #     time.sleep(0.5)
-    #     pygame.draw.line(surface, (0, 0, 0), (x1, y1), (chosen_one[0], chosen_one[1]), 1)
-    #     pygame.display.flip()
-    #     time.sleep(0.5)
-    #     draw_pixel_recursive(P_1[0],P_1[1], count-1)
-
     # P_0 = (random_row(), random_col())
     # varibles = [random_point() for i in range(4)]
     # i = random.randint(0,2)
